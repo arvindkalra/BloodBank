@@ -1,0 +1,14 @@
+{
+  "name": "bloodbank",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^3.0.3",
+    "nodemon": "^1.17.1"
+  }
+}
