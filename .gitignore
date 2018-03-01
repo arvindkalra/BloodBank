@@ -1,2 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
+
+#Modules
 node_modules/
+.idea/
+
+#Configuration
+config.json
