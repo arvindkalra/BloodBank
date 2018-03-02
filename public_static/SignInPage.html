@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Khoon Daan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+</head>
+<body>
+<nav class="navbar is-warning">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+            KHOON DAAN
+        </a>
+        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <p class="control">
+                    <a class="button is-danger" id="registerButton" data-target="registerModal">Register</a>
+                </p>
+            </div>
+            <div class="navbar-item">
+                <p class="control">
+                    <a class="button is-danger is-outlined" id="signInButton" data-target="signInModal">Sign-In</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Sign In Modal-->
+<div class="modal" id="signInModal">
+    <div class="modal-background signInClose"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Sign In</p>
+            <button class="delete signInClose" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            To Add Sign In Form
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success">Sign In</button>
+            <button class="button signInClose">Cancel</button>
+        </footer>
+    </div>
+</div>
+<!--Sign In Modal End-->
+
+<!--Register Modal-->
+<div class="modal" id="registerModal">
+    <div class="modal-background registerClose"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Register</p>
+            <button class="delete registerClose" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+
+            <div class="form">
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-info" id="name" type="text" placeholder="Name">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-info" id="phone_number" type="tel" placeholder="+91-9999000011">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-info" id="blood_group" type="text" placeholder="Blood Group">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <textarea class="textarea is-info" id="address" placeholder="Address"></textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-info" id="pin_code" type="tel" placeholder="Pin Code">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-info" id="email" type="email" placeholder="Email-Id">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-info" id="password" type="password" placeholder="Password">
+                    </div>
+                </div>
+            </div>
+            <div class="info-about-register" style="height: 150px">
+
+            </div>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success">Register</button>
+            <button class="button registerClose">Cancel</button>
+        </footer>
+    </div>
+</div>
+<!--Register Modal End-->
+
+<script src="js/bulma.js"></script>
+</body>
+</html>
