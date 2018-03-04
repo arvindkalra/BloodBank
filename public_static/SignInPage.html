@@ -42,7 +42,21 @@
             <button class="delete signInClose" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
-            To Add Sign In Form
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                    <input class="input" type="email" id="emailIn" placeholder="Email">
+                </p>
+            </div>
+
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input class="input" type="password" id="passwordIn" placeholder="Password">
+                </p>
+            </div>
+
+            <div class="info-about-register" style="height: 150px">
+
+            </div>
         </section>
         <footer class="modal-card-foot">
             <button class="button is-success">Sign In</button>
@@ -63,54 +77,70 @@
         <section class="modal-card-body">
 
             <div class="form">
+                <div class="notification is-primary">
+                    All Fields are COMPULSARY...
+                </div>
                 <div class="field">
+                    <label class="label">Name</label>
                     <div class="control">
-                        <input class="input is-info" id="name" type="text" placeholder="Name">
+                        <input class="input is-info" id="name" type="text" placeholder="e.g. John">
                     </div>
                 </div>
                 <div class="field">
+                    <label class="label">Phone Number</label>
                     <div class="control">
-                        <input class="input is-info" id="phone_number" type="tel" placeholder="+91-9999000011">
+                        <input class="input is-info" id="phone_number" type="tel" placeholder="e.g. 9999000011">
                     </div>
                 </div>
                 <div class="field">
+                    <label class="label">Blood Group</label>
                     <div class="control">
-                        <input class="input is-info" id="blood_group" type="text" placeholder="Blood Group">
+                        <input class="input is-info" id="blood_group" type="text" placeholder="e.g. B+">
                     </div>
                 </div>
                 <div class="field">
+                    <label class="label">Address</label>
                     <div class="control">
-                        <textarea class="textarea is-info" id="address" placeholder="Address"></textarea>
+                        <textarea class="textarea is-info" id="address" placeholder="e.g. 12/24, Karol Bagh, New Delhi"></textarea>
                     </div>
                 </div>
                 <div class="field">
+                    <label class="label">Pin Code</label>
                     <div class="control">
-                        <input class="input is-info" id="pin_code" type="tel" placeholder="Pin Code">
+                        <input class="input is-info" id="pin_code" type="tel" placeholder="e.g. 110060">
                     </div>
                 </div>
                 <div class="field">
+                    <label class="label">Email Id</label>
                     <div class="control">
-                        <input class="input is-info" id="email" type="email" placeholder="Email-Id">
+                        <input class="input is-info" id="email" type="email" placeholder="e.g. john@xyz.com">
                     </div>
                 </div>
                 <div class="field">
+                    <label class="label">Password</label>
                     <div class="control">
                         <input class="input is-info" id="password" type="password" placeholder="Password">
                     </div>
                 </div>
             </div>
-            <div class="info-about-register" style="height: 150px">
-
+            <div id="info-about-register" style="height: 150px; margin-top: 15px;">
+                <!--<div class="notification is-danger">-->
+                    <!--<strong>Some of the fields are incorrect or empty</strong>-->
+                <!--</div>-->
             </div>
         </section>
         <footer class="modal-card-foot">
-            <button class="button is-success">Register</button>
+            <button class="button is-success" id="register">Register</button>
             <button class="button registerClose">Cancel</button>
         </footer>
     </div>
 </div>
 <!--Register Modal End-->
-
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 <script src="js/bulma.js"></script>
+<script src="js/register.js"></script>
 </body>
 </html>
