@@ -17,3 +17,9 @@ For Checking if User Exists <br>
 * Body Parameters {email}
 * Object in DB (Iterate over DB to get List)
 * Response {present(boolean)}
+
+**POST `/signin`** (To Be Checked)<br>
+For Providing Sign In Functionality <br>
+* Body Parameters {email, password}
+* Object in DB (Iterate over DB to get List)
+* (If Incorrect)Response {isDone(boolean), error(Message)}  (If Correct)Render The Page
