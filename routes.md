@@ -18,8 +18,8 @@ For Checking if User Exists <br>
 * Object in DB (Iterate over DB to get List)
 * Response {present(boolean)}
 
-**POST `/signin`** (To Be Checked)<br>
+**POST `/login`** (Checked OK Render Page to Be Added)<br>
 For Providing Sign In Functionality <br>
-* Body Parameters {email, password}
+* Body Parameters {username, password}
 * Object in DB (Iterate over DB to get List)
-* (If Incorrect)Response {isDone(boolean), error(Message)}  (If Correct)Render The Page
+* (If Incorrect)Response {isDone : false}  (If Correct)Response {isDone : true, hash(Crypto)}
