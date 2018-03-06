@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             "                      </div>");
                         $loader.removeClass('is-active');
                     }else{
-                        window.location.replace('/profile?hash='+result.hash);
+                        window.location.replace('/profile?q='+result.hash);
                     }
                 });
             }, 2000);

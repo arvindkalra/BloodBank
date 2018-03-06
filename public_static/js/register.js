@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             password: password_val
                         }, function (result) {
                             $.post('/login', {username : email_val, password: password_val}, function (result1) {
-                                window.location.replace('/profile?hash='+result1.hash);
+                                window.location.replace('/profile?q='+result1.hash);
                             });
                         });
                     }

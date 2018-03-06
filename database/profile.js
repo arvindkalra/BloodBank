@@ -10,7 +10,7 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
 router.get('/', function (req, res) {
-   let hash = req.query.hash;
+   let hash = req.query.q;
    res.render('SignedIn', {
        ID : hash
    });
