@@ -29,15 +29,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 "                          <strong>Enter A Valid EmailID.</strong>\n" +
                 "                      </div>");
         }else{
-            $.post('/login', {username : emailIn_val, password: passwordIn_val}, function (result) {
-                if(!result.isDone){
-                    $info_about_signin.html("<div class=\"notification is-danger\">\n" +
-                        "                          <strong>Email/Password Entered is Incorrect</strong>\n" +
-                        "                      </div>");
-                }else{
-                    window.location.replace('/profile?hash='+result.hash);
-                }
-            });
+            let $loader = $('#loader');
+            $loader.addClass('is-active');
+            setTimeout(function () {
+                $.post('/login', {username : emailIn_val, password: passwordIn_val}, function (result) {
+                    if(!result.isDone){
+                        $info_about_signin.html("<div class=\"notification is-danger\">\n" +
+                            "                          <strong>Email/Password Entered is Incorrect</strong>\n" +
+                            "                      </div>");
+                        $loader.removeClass('is-active');
+                    }else{
+                        window.location.replace('/profile?hash='+result.hash);
+                    }
+                });
+            }, 2000);
+
         }
     });
 
