@@ -27,6 +27,11 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname,'public_static'));
 app.use('/', express.static('public_static'));
 
+app.use(function (req, res, next) {
+   console.log("----" + req.method + "--" + req.url + "----");
+   next();
+});
+
 let db = undefined;
 
 const bodyParser = require('body-parser');
@@ -43,8 +48,6 @@ app.use(passport.session());
 app.use(cookieParser());
 
 passport.use(new LocalStrategy(function (username, password, done) {
-    console.log("*************");
-    console.log("POST /login");
     if(db === undefined){
         let connection = require('./database/connect.js');
         db = connection.obj;

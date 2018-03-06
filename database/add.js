@@ -10,8 +10,6 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
 router.post('/checkUser', function (req, res) {
-    console.log('*****************');
-    console.log("POST /add/checkUser");
     console.log(req.body);
     let email = req.body.email;
 
@@ -35,8 +33,6 @@ router.post('/checkUser', function (req, res) {
 });
 
 router.post('/newUser', function (req, res) {
-    console.log('*****************');
-    console.log("POST /add/newUser");
     console.log(req.body);
     let name = req.body.name;
     let phone_number = req.body.phone_number;

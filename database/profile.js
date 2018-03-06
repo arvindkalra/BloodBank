@@ -13,16 +13,15 @@ router.get('/', function (req, res) {
    let hash = req.query.hash;
    res.render('SignedIn', {
        ID : hash
-   })
+   });
+   console.log('*****************\n\n');
 });
 
 router.post('/request', function (req, res) {
-    console.log('*****************');
-    console.log("POST /get/request");
 
     // TODO Add Blood Request Here
 
-    console.log('*****************');
+    console.log('*****************\n\n');
 });
 
 module.exports = router;

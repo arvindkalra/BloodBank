@@ -21,9 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
         //For Password
         let $passwordIn = $('#passwordIn');
         let passwordIn_val = $passwordIn.val();
+        let $info_about_signin = $('#info-about-signin');
 
         if(needToAdd){
-            let $info_about_signin = $('#info-about-signin');
+
             $info_about_signin.html("<div class=\"notification is-danger\">\n" +
                 "                          <strong>Enter A Valid EmailID.</strong>\n" +
                 "                      </div>");
