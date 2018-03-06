@@ -102,6 +102,28 @@ document.addEventListener('DOMContentLoaded', function () {
             $info_about_register.html("<div class=\"notification is-danger\">\n" +
                 "                          <strong>Some of the fields are incorrect or empty</strong>\n" +
                 "                      </div>");
+        }else{
+            $.post('/add/checkUser', {email : email_val}, function (result) {
+               if(result.present){
+                   $info_about_register.html("<div class=\"notification is-danger\">\n" +
+                       "                          <strong>Email Already Registered... Try With another Email</strong>\n" +
+                       "                      </div>");
+               } else{
+                   $.post('/add/newUser', {
+                       name: name_val,
+                       phone_number:  phone_number_val,
+                       blood_group: blood_group_val,
+                       address: address_val,
+                       pin_code: pin_code_val,
+                       email: email_val,
+                       password: password_val
+                   }, function (result) {
+                       $.post('/login', {username : email_val, password: password_val}, function (result1) {
+                           window.location.replace('/profile?hash='+result1.hash);
+                       });
+                   });
+               }
+            });
         }
     });
 

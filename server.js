@@ -6,7 +6,13 @@ const PORT = 4000 || process.env.PORT;
 // Exported JS Files
 const db_connect = require('./database/connect');
 const add = require('./database/add.js');
-const get = require('./database/get.js');
+const profile = require('./database/profile.js');
+
+app.listen(PORT, () => {
+    db_connect.connect(function (){
+        console.log("Serving on http://localhost:" + PORT);
+    });
+});
 
 // Passport.js  Requirements
 const passport = require('passport');
@@ -14,6 +20,12 @@ const passportLocal = require('passport-local');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const LocalStrategy = passportLocal.Strategy;
+
+// HandleBars Requirements
+const path = require('path');
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname,'public_static'));
+app.use('/', express.static('public_static'));
 
 let db = undefined;
 
@@ -31,7 +43,8 @@ app.use(passport.session());
 app.use(cookieParser());
 
 passport.use(new LocalStrategy(function (username, password, done) {
-
+    console.log("*************");
+    console.log("POST /login");
     if(db === undefined){
         let connection = require('./database/connect.js');
         db = connection.obj;
@@ -65,11 +78,15 @@ passport.deserializeUser(function(id, done) {
 });
 
 app.get('/notdone', function (req, res) {
+    console.log("Declined");
     res.send({isDone : false});
+    console.log("*************\n\n")
 });
 
 app.get('/done', function (req, res) {
+    console.log("Accepted")
     res.send({isDone : true, hash : req.user});
+    console.log("*************\n\n")
 });
 
 app.get('/logout', function(req, res){
@@ -79,13 +96,14 @@ app.get('/logout', function(req, res){
 });
 
 function checkUser(req, res, next) {
-    console.log("Check"+ req.user);
+    console.log("Page Requested");
     if(req.user){
         console.log("Allowed");
         next();
     }else{
         console.log("Not Allowed");
         res.send(false);
+        console.log("*************\n\n")
     }
 }
 
@@ -94,10 +112,5 @@ app.use('/add', add);
 
 app.use(checkUser);
 
-app.use('/get', get);
+app.use('/profile', profile);
 
-app.listen(PORT, () => {
-    db_connect.connect(function (){
-        console.log("Serving on http://localhost:" + PORT);
-    });
-});
