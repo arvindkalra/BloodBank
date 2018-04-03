@@ -223,6 +223,14 @@ bson@~1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/bson/-/bson-1.0.5.tgz#34563b73ff1fde9387c1b9fb5afd845ecc4ba623"
 
+bulma-carousel@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/bulma-carousel/-/bulma-carousel-1.0.12.tgz#071b13aabc9565f9e882fe3071ee63f0b1ec5a83"
+
+bulma-extensions@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/bulma-extensions/-/bulma-extensions-1.0.14.tgz#dbd53ede1aa24e7559f3c81621b51885e4b17ebc"
+
 bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"

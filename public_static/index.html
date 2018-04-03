@@ -5,11 +5,13 @@
     <title>Khoon Daan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="/carousel/css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <nav class="navbar is-warning">
     <div class="navbar-brand">
-        <a class="navbar-item" href="#">
+        <a class="navbar-item" href="#" style="font-size: 2rem">
             KHOON DAAN
         </a>
         <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
@@ -22,18 +24,38 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <p class="control">
-                    <a class="button is-danger" id="registerButton" data-target="registerModal">Register</a>
+                    <a class="button is-danger" id="registerButton" data-target="registerModal" style="font-size: 1.5rem">Register</a>
                 </p>
             </div>
             <div class="navbar-item">
                 <p class="control">
-                    <a class="button is-danger is-outlined" id="signInButton" data-target="signInModal">Sign-In</a>
+                    <a class="button is-danger is-outlined" id="signInButton" data-target="signInModal"  style="font-size: 1.5rem">Sign-In</a>
                 </p>
             </div>
         </div>
     </div>
 </nav>
 
+<section class='carousel carousel-animated carousel-animate-slide' id="carousel-auto" data-autoplay="true">
+    <div class='carousel-container'>
+        <div class='carousel-item has-background is-active'>
+            <img class="is-background" src="https://wikiki.github.io/images/merry-christmas.jpg" alt="" width="640" height="310" />
+            <div class="title">Merry Christmas</div>
+        </div>
+        <div class='carousel-item has-background'>
+            <img class="is-background" src="https://wikiki.github.io/images/singer.jpg" alt="" width="640" height="310" />
+            <div class="title">Original Gift: Offer a song with <a href="https://lasongbox.com" target="_blank">La Song Box</a></div>
+        </div>
+        <div class='carousel-item has-background'>
+            <img class="is-background" src="https://wikiki.github.io/images/sushi.jpg" alt="" width="640" height="310" />
+            <div class="title">Sushi time</div>
+        </div>
+        <div class='carousel-item has-background'>
+            <img class="is-background" src="https://wikiki.github.io/images/life.jpg" alt="" width="640" height="310" />
+            <div class="title">Life</div>
+        </div>
+    </div>
+</section>
 <!-- Sign In Modal-->
 <div class="modal" id="signInModal">
     <div class="modal-background signInClose"></div>
@@ -152,6 +174,7 @@
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+<script type="text/javascript" src="/carousel/js"></script>
 <script src="js/bulma.js"></script>
 <script src="js/register.js"></script>
 <script src="js/signin.js"></script>

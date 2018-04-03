@@ -98,9 +98,17 @@ app.get('/logout', function(req, res){
     res.send(true);
 });
 
+app.get('/carousel/js', function (req, res) {
+   res.sendFile(path.join(__dirname,'node_modules/bulma-extensions/bulma-carousel/dist/bulma-carousel.min.js'));
+});
+
+app.get('/carousel/css', function (req, res) {
+    res.sendFile(path.join(__dirname,'node_modules/bulma-extensions/bulma-carousel/dist/bulma-carousel.min.css'));
+});
+
 function checkUser(req, res, next) {
     console.log("Page Requested");
-    if(req.user){
+    if(req.user || req.url.substr(0, 13) === '/node_modules'){
         console.log("Allowed");
         next();
     }else{
