@@ -39,7 +39,11 @@ document.addEventListener('DOMContentLoaded', function () {
                             "                      </div>");
                         $loader.removeClass('is-active');
                     }else{
-                        window.location.replace('/profile?q='+result.hash);
+                        let $form=$(document.createElement('form')).css({display:'none'}).attr("method","POST").attr("action","/profile");
+                        let $input=$(document.createElement('input')).attr('name','id').val(result.hash);
+                        $form.append($input);
+                        $("body").append($form);
+                        $form.submit();
                     }
                 });
             }, 2000);

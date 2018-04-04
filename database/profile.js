@@ -9,8 +9,8 @@ router.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 router.use(bodyParser.json());
 
-router.get('/', function (req, res) {
-   let hash = req.query.q;
+router.post('/', function (req, res) {
+   let hash = req.body.id;
    res.render('SignedIn', {
        ID : hash
    });

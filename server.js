@@ -28,11 +28,6 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname,'public_static'));
 app.use('/', express.static('public_static'));
 
-app.use(function (req, res, next) {
-   console.log("----" + req.method + "--" + req.url + "----");
-   next();
-});
-
 let db = undefined;
 
 const bodyParser = require('body-parser');
@@ -42,6 +37,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
+
+app.use(function (req, res, next) {
+    console.log("----" + req.method + "--" + req.url + "----");
+    if(req.method === 'POST'){
+        console.log(req.body);
+    }else{
+        console.log(req.query);
+    }
+    next();
+});
 
 app.use(session({secret : "keyboard cat"}));
 app.use(passport.initialize());
@@ -99,14 +104,6 @@ app.get('/logout', function(req, res){
     console.log("Do Logout");
     req.logout();
     res.send(true);
-});
-
-app.get('/carousel/js', function (req, res) {
-   res.sendFile(path.join(__dirname,'node_modules/bulma-extensions/bulma-carousel/dist/bulma-carousel.min.js'));
-});
-
-app.get('/carousel/css', function (req, res) {
-    res.sendFile(path.join(__dirname,'node_modules/bulma-extensions/bulma-carousel/dist/bulma-carousel.min.css'));
 });
 
 function checkUser(req, res, next) {
