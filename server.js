@@ -7,6 +7,7 @@ const PORT = 4000 || process.env.PORT;
 const db_connect = require('./database/connect');
 const add = require('./database/add.js');
 const profile = require('./database/profile.js');
+const sources = require('./sources.js');
 
 app.listen(PORT, () => {
     db_connect.connect(function (){
@@ -67,6 +68,8 @@ passport.use(new LocalStrategy(function (username, password, done) {
         }
     });
 }));
+
+app.use('/sources', sources);
 
 app.post('/login', passport.authenticate('local', { successRedirect: '/done',
     failureRedirect: '/notdone'})
