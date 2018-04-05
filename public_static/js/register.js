@@ -126,7 +126,11 @@ document.addEventListener('DOMContentLoaded', function () {
                             password: password_val
                         }, function (result) {
                             $.post('/login', {username : email_val, password: password_val}, function (result1) {
-                                window.location.replace('/profile?q='+result1.hash);
+                                let $form=$(document.createElement('form')).css({display:'none'}).attr("method","POST").attr("action","/profile");
+                                let $input=$(document.createElement('input')).attr('name','id').val(result1.hash);
+                                $form.append($input);
+                                $("body").append($form);
+                                $form.submit();
                             });
                         });
                     }

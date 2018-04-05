@@ -11,7 +11,7 @@ const sources = require('./sources.js');
 
 app.listen(PORT, () => {
     db_connect.connect(function (){
-        console.log("Serving on http://localhost:" + PORT);
+        console.log("Serving on http://127.0.0.1:" + PORT);
     });
 });
 

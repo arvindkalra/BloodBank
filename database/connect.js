@@ -1,7 +1,7 @@
 const mongodb = require('mongodb').MongoClient;
 const config = require('../config.json');
 const db = config.database;
-const url = 'mongodb://'+db.username+':'+db.password+'@'+db.hostname+':'+db.port+'/'+db.dbname;
+const url = 'mongodb://localhost:27017';
 
 module.exports = {
     connect : function(callback) {
