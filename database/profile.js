@@ -24,7 +24,12 @@ router.post('/', function (req, res) {
           if(err1) throw err1;
           let name = data.name;
           res.render('SignedIn', {
-             name : name
+              name : name,
+              phone_number : data.phone_number,
+              email : data.email,
+              address : data.address,
+              blood_group : data.blood_group,
+              last_donated : data.last_donated
           });
       })
    });
