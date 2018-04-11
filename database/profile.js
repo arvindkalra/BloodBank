@@ -11,9 +11,24 @@ router.use(bodyParser.json());
 
 router.post('/', function (req, res) {
    let hash = req.body.id;
-   res.render('SignedIn', {
-       ID : hash
+
+   if(db === undefined){
+       let connection = require('./connect.js');
+       db = connection.obj;
+   }
+
+   db.collection('users').findOne({hash : hash}, function (err, result) {
+      if(err) throw err;
+      let pin_code = result.pin_code;
+      db.collection(pin_code).findOne({hash : hash}, function (err1, data) {
+          if(err1) throw err1;
+          let name = data.name;
+          res.render('SignedIn', {
+             name : name
+          });
+      })
    });
+
    console.log('*****************\n\n');
 });
 
