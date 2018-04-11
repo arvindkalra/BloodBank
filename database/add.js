@@ -49,6 +49,7 @@ router.post('/newUser', function (req, res) {
     let userobjtba = {
         email : email,
         password : password,
+        pin_code : pin_code,
         hash : hash
     };
     let objtba = {
