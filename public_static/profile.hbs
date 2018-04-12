@@ -53,7 +53,7 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <p class="control">
-                    <a class="button is-danger" id="registerButton" data-target="registerModal" style="font-size: 1.5rem">Sign-Out</a>
+                    <a class="button is-danger" id="logoutButton" style="font-size: 1.5rem">Sign-Out</a>
                 </p>
             </div>
         </div>
@@ -120,8 +120,18 @@
     </div>
 </div>
 
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 <script>
-    
+    $('#logoutButton').click(function () {
+       $.get('/logout', function (result) {
+           if(result){
+               window.location.replace('/');
+           }
+       })
+    });
 </script>
 
 </body>

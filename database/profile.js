@@ -32,7 +32,7 @@ router.post('/', function (req, res) {
       db.collection(pin_code).findOne({hash : hash}, function (err1, data) {
           if(err1) throw err1;
           let name = data.name;
-          res.render('SignedIn', {
+          res.render('profile', {
               name : name,
               phone_number : data.phone_number,
               email : data.email,
