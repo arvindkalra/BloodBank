@@ -129,10 +129,24 @@
         </header>
         <section class="modal-card-body">
             <div class="field">
+                <label class="label">Blood Group Required</label>
                 <div class="control">
-                    <input class="input is-primary" type="text" placeholder="">
+                    <input class="input" type="text" placeholder="e.g. B+">
                 </div>
             </div>
+
+            <label class="checkbox">
+                <input type="checkbox" onclick="handleClick(this)">
+                Use Current Mobile Number
+            </label>
+
+            <div class="field">
+                <label class="label">Mobile Number</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="e.g. 9999111123">
+                </div>
+            </div>
+
         </section>
         <footer class="modal-card-foot">
             <button class="button is-success" id="request">Request for Blood</button>
@@ -153,6 +167,13 @@
            }
        })
     });
+    function handleClick(cb) {
+        if(cb.checked){
+            //TODO add checked listener
+        }else{
+
+        }
+    }
 </script>
 <script src="js/requestModal.js"></script>
 
