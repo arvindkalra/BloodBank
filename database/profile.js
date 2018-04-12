@@ -3,6 +3,15 @@ const bodyParser = require('body-parser');
 const path = require('path');
 let db = undefined;
 
+const hbs = require('hbs');
+
+hbs.registerHelper('checkNull', function (val, options) {
+   if(val === null){
+        return options.fn(this);
+   }
+   return options.inverse(this);
+});
+
 // parse application/x-www-form-urlencoded
 router.use(bodyParser.urlencoded({ extended: false }));
 

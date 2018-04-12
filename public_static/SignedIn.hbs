@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>{{name}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+
     <style>
         .card-box{
             margin-top: 2.5%;
@@ -13,9 +17,45 @@
         .column{
             margin: 2px;
         }
+        strong{
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 1.5em;
+        }
+        .value{
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.3em;
+        }
+        .card-header-title{
+            font-family: 'Courgette', cursive;
+            font-size: 3em;
+            margin-left: 30px;
+        }
     </style>
 </head>
 <body>
+
+<nav class="navbar is-warning">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="#" style="font-size: 2rem">
+            KHOON DAAN
+        </a>
+        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <p class="control">
+                    <a class="button is-danger" id="registerButton" data-target="registerModal" style="font-size: 1.5rem">Sign-Out</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</nav>
+
 <div class="card-box">
 
     <div class="card">
@@ -37,27 +77,31 @@
                             <tbody>
                                 <tr>
                                     <td><strong>Name</strong></td>
-                                    <td>{{name}}</td>
+                                    <td class="value">{{name}}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Phone Number</strong></td>
-                                    <td>{{phone_number}}</td>
+                                    <td class="value">{{phone_number}}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>E-Mail</strong></td>
-                                    <td>{{email}}</td>
+                                    <td class="value">{{email}}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Address</strong></td>
-                                    <td>{{address}}</td>
+                                    <td class="value">{{address}}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Blood Group</strong></td>
-                                    <td>{{blood_group}}</td>
+                                    <td class="value">{{blood_group}}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Last Donated</strong></td>
-                                    <td>{{last_donated}}</td>
+                                    {{#checkNull last_donated}}
+                                    <td class="value">Not Yet Donated</td>
+                                    {{else}}
+                                    <td class="value">{{last_donated}}</td>
+                                    {{/checkNull}}
                                 </tr>
                             </tbody>
                         </table>
@@ -66,11 +110,11 @@
             </div>
         </div>
         <footer class="card-footer">
-            <a href="#" class="card-footer-item">Save</a>
-            <a href="#" class="card-footer-item">Edit</a>
-            <a href="#" class="card-footer-item">Delete</a>
+            <a href="#" class="card-footer-item is-one-third">Edit</a>
+            <a href="#" class="card-footer-item">Request For Blood</a>
         </footer>
     </div>
 </div>
+
 </body>
 </html>
