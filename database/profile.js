@@ -38,7 +38,8 @@ router.post('/', function (req, res) {
               email : data.email,
               address : data.address,
               blood_group : data.blood_group,
-              last_donated : data.last_donated
+              last_donated : data.last_donated,
+              last_requested: data.last_requested
           });
       })
    });

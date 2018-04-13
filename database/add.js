@@ -59,7 +59,8 @@ router.post('/newUser', function (req, res) {
         blood_group : blood_group,
         address : address,
         email : email,
-        last_donated : null
+        last_donated : null,
+        last_requested : null
     };
     db.collection('users').insertOne(userobjtba, function (err, result) {
         if(err) throw err;

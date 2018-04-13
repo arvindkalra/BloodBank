@@ -51,9 +51,28 @@ function initMap() {
 }
 
 function handleMapClick(cb) {
+    let $map_search = $('#map_search');
     if(cb.checked){
 
+        if(navigator.geolocation){
+
+            $map_search.val("Current Location");
+            $map_search.attr("disabled", true);
+
+            navigator.geolocation.getCurrentPosition(function (lat_lng) {
+                let uluru = {lat: lat_lng.coords.latitude, lng: lat_lng.coords.longitude};
+                if(curr_marker) curr_marker.setMap(null);
+                curr_marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map
+                });
+                map.setZoom(17);
+                map.panTo(curr_marker.position);
+            });
+        }
+
     }else{
-        
+        $map_search.val("");
+        $map_search.attr("disabled", false);
     }
 }

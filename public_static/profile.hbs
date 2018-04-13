@@ -112,6 +112,14 @@
                                     <td class="value">{{last_donated}}</td>
                                     {{/checkNull}}
                                 </tr>
+                                <tr>
+                                    <td><strong>Last Requested</strong></td>
+                                    {{#checkNull last_requested}}
+                                        <td class="value">Not Yet Requested</td>
+                                    {{else}}
+                                        <td class="value">{{last_requested}}</td>
+                                    {{/checkNull}}
+                                </tr>
                             </tbody>
                         </table>
                     </div>
