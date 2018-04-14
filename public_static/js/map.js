@@ -14,7 +14,7 @@ function searchLocation($map_search) {
     let req_param = location.split(' ').join('+');
     $.get('https://maps.googleapis.com/maps/api/geocode/json?address='+req_param+'&key=AIzaSyBMp0uJ_VjsHraJFBQuu9_YLmhSuLjHV-g', function (result) {
         if(result.results.length === 0){
-            alert("Could Not Find the Location Entered By You... Either Enter a New Location or Try By Clicking at the Location on the Map..");
+            alert("Could Not Find the Location Entered By You Enter a New Location");
             $('#loader').removeClass('is-active');
             return;
         }
@@ -56,11 +56,12 @@ function handleMapClick(cb) {
 
         if(navigator.geolocation){
 
-            $map_search.val("Current Location");
+            // $map_search.val("Current Location");
             $map_search.attr("disabled", true);
 
             navigator.geolocation.getCurrentPosition(function (lat_lng) {
                 let uluru = {lat: lat_lng.coords.latitude, lng: lat_lng.coords.longitude};
+                let url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+uluru.lat+","+uluru.lng+"&key=AIzaSyCFjlAyZXOangdko_28YsHtmR7vEKiO120";
                 if(curr_marker) curr_marker.setMap(null);
                 curr_marker = new google.maps.Marker({
                     position: uluru,
@@ -68,6 +69,12 @@ function handleMapClick(cb) {
                 });
                 map.setZoom(17);
                 map.panTo(curr_marker.position);
+                $.get(url, function (result) {
+                    if(result){
+                        let value = result.results[0].formatted_address;
+                        $map_search.val(value);
+                    }
+                })
             });
         }
 
