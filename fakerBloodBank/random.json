@@ -1,0 +1,32 @@
+{
+  "names" : [
+    "Arvind",
+    "Pramod",
+    "Sarita",
+    "Paridhi",
+    "Kanika",
+    "Nishtha",
+    "Surabhi",
+    "Mandeep",
+    "Prasuk",
+    "Kashika",
+    "Aman",
+    "Harjot",
+    "Prateek"
+  ],
+  "pincodes" : [
+    "110008",
+    "110060",
+    "110006"
+  ],
+  "bloodgroup" : [
+    "B+",
+    "B-",
+    "A+"
+  ],
+  "address" : [
+    "ABC",
+    "BCD",
+    "EFG"
+  ]
+}
